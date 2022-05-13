@@ -65,8 +65,10 @@ Teams model
 ```javascript
 {
   name: String,
-  trophies: Number,
+  teamChief: String,
+  championships: Number,
   country: String,
+  firstEntry: Number,
   imageUrl: String
 }
 
@@ -79,7 +81,8 @@ Pilots model
   name: String,
   age: Number,
   nationality: String,
-  trophies: String,
+  podiums: Number,
+  championships: Number,
   imageUrl: String
 }
 
