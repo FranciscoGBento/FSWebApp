@@ -207,3 +207,9 @@ const pilots = [
   },
 ];
 
+Pilot.create(pilots)
+  .then((createdPilots) => {
+    console.log(`Created ${createdPilots.length} in the DB`);
+    mongoose.disconnect(() => console.log("Disconnected from the db"));
+  })
+  .catch((err) => console.log(err));
