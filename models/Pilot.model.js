@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const pilotSchema = new Schema(
   {
     name: String,
-    age: Number,
+    dateOfBirth: String,
     nationality: String,
     podiums: Number,
     championships: Number,
