@@ -4,7 +4,7 @@
 
 ## Description
 
-Search platform for restaurants in Barcelona and creating the favorite list of restaurants.
+Iron GP is a application where we can search for F1 information.
 
 <br>
 
@@ -12,16 +12,15 @@ Search platform for restaurants in Barcelona and creating the favorite list of r
 
 - **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault
 - **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
-- **homepage** - As a user I want to be able to access the homepage and filter by type of restaurant, log in and sign up.
+- **homepage** - As a user I want to be able to access the homepage with all the sortcuts.
 - **sign up** - As a user I want to sign up on the web page so that I can add favorite restaurants to my list.
 - **login** - As a user I want to be able to log in on the web page so that I can get back to my account
 - **logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
 - **edit user** - As a user I want to be able to edit my profile.
-- **tabs** - Home page, Teams, Grand Prix, Standings/Calendar, Login, Profile
-- **Teams list** - As a user I want to see the list of F1 teams with pilots, create a new team
-- **Grand Prix** - Check circuits. (Best lap, pilots and standings, markable race)
+- **nav** - Home page, Teams, Pilots,  Standings/Calendar, , Buy Ticket,  Login, Profile
+- **Teams** - As a user I want to see the list of F1 teams with their own information.
 - **Pilots** - As a user I want to see more details about the pilot.
-- **Calender** - As a user I want to see the Grand Prix information when I click the date.
+- **Schedule** - As a user I want to see the Grand Prix information when I click the date.
 - **Profile** - As a user I want to see the list of my favourite teams and my information account.
 
 ## Server Routes (Back-end):
@@ -30,19 +29,19 @@ Search platform for restaurants in Barcelona and creating the favorite list of r
 | ---------- | ----------------------------------- | ------------------------------------------------------------------------ | ------------------------------------- |
 | `GET`      | `/`                                 | Main page route. Renders home `index` view.                              |                                       |
 | `GET`      | `/login`                            | Renders `login` form view.                                               |                                       |
-| `POST`     | `/login`                            | Sends Login form data to the server.                                     | { email, password }                   |
-| `GET`      | `/signup`                           | Renders `signup` form view.                                              |                                       |
-| `POST`     | `/signup`                           | Sends Sign Up info to the server and creates user in the DB.             | { email, password }                   |
+| `POST`     | `/login`                            | Sends Login form data to the server  and redirect to homepage after created.                                     | { email, password }                   |
+| `GET`      | `/signup`                           | Renders `login` form view                                               |                                       |
+| `POST`     | `/signup`                           | Sends Sign Up info to the server and creates user in the DB. and redirect to homepage after created.          | { name, email, password, imageUrl}                   |
 | `GET`      | `/logout`                           | Renders `index` form view.                                               |                                       |
-| `GET`      | `/private/edit-profile`             | Private route. Renders `edit-profile` form view.                         |                                       |
-| `PUT`      | `/private/edit-profile`             | Private route. Sends edit-profile info to server and updates user in DB. | {name, email, password, imageUrl }    |
+| `DELETE`   | `/private/profile/` | Private route. Deletes the existing user account.|                                                          |
+| `GET`      | `/private/profile`             | Private route. Renders `profile` form view.                         |                                       |
+| `PUT`      | `/private/profile`             | Private route. Sends profile info to server and updates user in DB and add favourite team, pilot and GP circuit. | {name, email, password, imageUrl }   |
 | `GET`      | `/private/teams-list`               | Private route. Render the `teams-list` view.                             |                                       |
-| `POST`     | `/private/teams-list/`              | Private route. Adds a new team for the current user.                     | { name, Trophies, country, imageUrl } |
-| `DELETE`   | `/private/teams-list/:teamsId`      | Private route. Deletes the existing team from the current user.          |                                       |
-| `GET`      | `/pilots`                           | Renders `pilots` view. {name, age, nationality, trophies, imageUrl}      |                                       |
-| `GET`      | `/pilots/details/:pilotsId`         | Renders `pilots-details` view for the particular pilot.                  |
+| `GET`      | `/private/teams-list/:teamsId`               | Private route. Render the `teams-details` view.                             |     {imageUrl, name, country, teamChief, championships, firstEntry}                                  |        |                                       |
+| `GET`      | `/pilots-list`                           | Renders `pilots` view.       |                                       |
+| `GET`      | `/pilots-list/details/:pilotsId`         | Renders `pilots-details` view for the particular pilot.                  | {name, age, nationality, podiums, imageUrl, championships}
 |            |
-| `GET`      | `/calendar`                         | Renders `calendar` view for the calendar/standings.                      |
+| `GET`      | `/calendar`                         | Renders `calendar` view for the calendar of the current season standings.                      |
 |            |
 | `GET`      | `/calendar/grand-prix/:grandprixId` | Renders `grandprix-details` view for the particular Grand Prix.          |
 |            |
@@ -66,7 +65,7 @@ Teams model
 ```javascript
 {
   name: String,
-  Trophies: Number,
+  trophies: Number,
   country: String,
   imageUrl: String
 }
