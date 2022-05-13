@@ -106,3 +106,11 @@ const teams = [
       "https://www.formula1.com/content/fom-website/en/teams/Alfa-Romeo-Racing/_jcr_content/logo.img.png/1643019381208.png",
   },
 ];
+
+
+Team.create(teams)
+  .then((createdTeams) => {
+    console.log(`Created ${createdTeams.length} in the DB`);
+    mongoose.disconnect(() => console.log('Disconnected from the db'));
+  })
+  .catch((err) => console.log(err));
