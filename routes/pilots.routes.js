@@ -9,12 +9,11 @@ router.get("/pilots", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-//Create route - above the details route so that /create isn't caught as an :id param
-router.get("/pilots/create", (req, res, next) => {
-  res.render("pilots/pilot-create");
+router.get("/pilots", (req, res, next) => {
+  res.render("pilots/pilots-list");
 });
 
-router.post("/pilots/create", (req, res, next) => {
+router.post("/pilots", (req, res, next) => {
   const { name, dateOfBirth, nationality, podiums, championships, imageUrl } =
     req.body;
 
@@ -30,8 +29,6 @@ router.post("/pilots/create", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-
-//Details route - since it requires an id we should be careful with the order of the routes
 router.get("/pilots/:id", (req, res, next) => {
   const { id } = req.params;
   Pilot.findById(id)
