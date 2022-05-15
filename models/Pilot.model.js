@@ -16,4 +16,4 @@ const pilotSchema = new Schema(
 
 const Pilot = model("Pilot", pilotSchema);
 
-model.exports = Pilot;
+module.exports = Pilot;

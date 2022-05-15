@@ -9,26 +9,23 @@ router.get("/pilots", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.get("/pilots", (req, res, next) => {
+//Create route
+/* router.get("/pilots", (req, res, next) => {
   res.render("pilots/pilots-list");
 });
-
+ */
 router.post("/pilots", (req, res, next) => {
   const { name, dateOfBirth, nationality, podiums, championships, imageUrl } =
     req.body;
 
-  Pilot.create({
-    name,
-    dateOfBirth,
-    nationality,
-    podiums,
-    championships,
+  Pilot.create({ name, dateOfBirth, nationality, podiums, championships,
     imageUrl,
   })
     .then(() => res.redirect("/pilots/pilots-list"))
     .catch((err) => next(err));
 });
 
+//Details route
 router.get("/pilots/:id", (req, res, next) => {
   const { id } = req.params;
   Pilot.findById(id)
