@@ -1,18 +1,20 @@
 const mongoose = require("mongoose");
 const Team = require("../models/Team.model");
 
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/iron-gp";
+require("../db")
+
+/* const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/FSWebApp";
 
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
     console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+      `Connected to Mongo! My Database name: "${x.connections[0].name}"`
     );
   })
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
-  });
+  }); */
 
 const teams = [
   {
