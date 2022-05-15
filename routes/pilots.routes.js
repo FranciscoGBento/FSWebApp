@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const Pilot = require("../models/Pilot.model");
 
-router.get("/pilots", (req, res, next) => {
+router.get("/pilots-list", (req, res, next) => {
   Pilot.find({})
     .then((pilots) => {
-      res.render("/pilots/pilots-list", { pilots });
+      res.render("pilots/pilots-list", { pilots });
     })
     .catch((err) => next(err));
 });
@@ -21,7 +21,7 @@ router.post("/pilots", (req, res, next) => {
   Pilot.create({ name, dateOfBirth, nationality, podiums, championships,
     imageUrl,
   })
-    .then(() => res.redirect("/pilots/pilots-list"))
+    .then(() => res.redirect("/pilots-list"))
     .catch((err) => next(err));
 });
 
