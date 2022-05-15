@@ -1,15 +1,20 @@
 const router = require("express").Router();
 const Team = require("../models/Team.model");
 
-router.get("/teams", (req, res, next) => {
+router.get("/teams-list", (req, res, next) => {
   Team.find({})
     .then((teams) => {
       res.render("team/teams-list", { teams });
     })
     .catch((err) => next(err));
+    
 });
 
-router.post("/teams", (req, res, next) => {
+/* router.get("/teams-list", (req, res, next) => {
+  res.render("team/teams-list");
+}); */
+
+router.post("/teams-list", (req, res, next) => {
   const { name, teamChief, championships, country, firstEntry, imageUrl } =
     req.body;
 
