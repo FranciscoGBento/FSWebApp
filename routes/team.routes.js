@@ -7,6 +7,7 @@ router.get("/teams-list", (req, res, next) => {
       res.render("team/teams-list", { teams });
     })
     .catch((err) => next(err));
+    
 });
 
 /* router.get("/teams-list", (req, res, next) => {
