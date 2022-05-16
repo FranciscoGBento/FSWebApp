@@ -8,6 +8,14 @@ class ApiService {
   getCalendar() {
     return this.api.get("/current.json");
   }
+
+  /* getCircuitsId(grandPrixId) {
+    return this.api.get(`/current/${grandPrixId}.json`);
+  } */
+
+ /*  getCircuits() {
+    return this.api.get('/2022/circuits.json')
+  } */
 }
 
 
