@@ -6,6 +6,9 @@ class ApiService {
   }
 
   getCalendar() {
-    return this.api.get("/current");
+    return this.api.get("/current.json");
   }
 }
+
+
+module.exports = ApiService;
