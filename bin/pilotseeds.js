@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 const Pilot = require("../models/Pilot.model");
+require("dotenv/config");
 
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/iron-gp";
+
+const MONGO_URI = process.env.MONGODB_URI;
 
 mongoose
   .connect(MONGO_URI)
@@ -28,7 +30,7 @@ const pilots = [
   {
     name: "Max Verstappen",
     dateOfBirth: "30/09/1997",
-    nationality: Netherlands,
+    nationality: "Netherlands",
     podiums: 63,
     championships: 1,
     imageUrl:
@@ -37,7 +39,7 @@ const pilots = [
   {
     name: "Sergio Perez",
     dateOfBirth: "26/01/1990",
-    nationality: Mexico,
+    nationality: "Mexico",
     podiums: 17,
     championships: 0,
     imageUrl:

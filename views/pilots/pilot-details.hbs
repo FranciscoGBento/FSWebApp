@@ -1,10 +1,9 @@
-{{#each pilots}}
+
   <div>
-    <h1>{{name}}</h1>
-    <p>Date of birth: {{dateOfBirth}}</p>
-    <p>Nationality: {{nationality}}</p>
-    <p>Podiums: {{podiums}}</p>
-    <p>Championships: {{championships}}</p>
-    <p>{{imageUrl}}</p>
+    <h1>{{pilot.name}}</h1>
+    <p>Date of birth: {{pilot.dateOfBirth}}</p>
+    <p>Nationality: {{pilot.nationality}}</p>
+    <p>Podiums: {{pilot.podiums}}</p>
+    <p>Championships: {{pilot.championships}}</p>
+    <img class="pilotslogo" src="{{pilot.imageUrl}}" alt="">
   </div>
-{{/each}}

@@ -10,3 +10,13 @@ a {
 h1 {
   color: 15px;
 }
+
+.teamlogos {
+  width: 350px;
+  height: 200px;
+}
+
+.pilotslogo {
+  width: 250px;
+  height: 350px;
+}

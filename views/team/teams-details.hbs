@@ -1,10 +1,10 @@
-{{#each teams}}
-  <div>
-    <h1>{{name}}</h1>
-    <p>TeamChief: {{teamChief}}</p>
-    <p>Championships: {{championships}}</p>
-    <p>Country: {{Country}}</p>
-    <p>First Race: {{firstEntry}}</p>
-    <p>{{imageUrl}}</p>
-  </div>
-{{/each}}
+
+
+  <h1>{{team.name}}</h1>
+  <p>TeamChief: {{team.teamChief}}</p>
+  <p>Championships: {{team.championships}}</p>
+  <p>Country: {{team.Country}}</p>
+  <p>First Race: {{team.firstEntry}}</p>
+  <img class="teamlogos" src='{{pilot.imageUrl}}' alt="">
+
+ 
