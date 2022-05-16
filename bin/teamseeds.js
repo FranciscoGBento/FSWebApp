@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 const Team = require("../models/Team.model");
+require("dotenv/config");
 
-require("../db")
 
-/* const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/FSWebApp";
+const MONGODB_URI = process.env.MONGODB_URI;
+console.log(process.env.MONGODB_URI)
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(MONGODB_URI)
   .then((x) => {
     console.log(
       `Connected to Mongo! My Database name: "${x.connections[0].name}"`
@@ -14,7 +15,7 @@ mongoose
   })
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
-  }); */
+  });
 
 const teams = [
   {

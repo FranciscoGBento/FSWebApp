@@ -15,7 +15,7 @@ router.get("/pilots/:id", (req, res, next) => {
   const { id } = req.params;
   Pilot.findById(id)
     .then((pilot) => {
-      res.render("pilots/pilot-details", pilot);
+      res.render("pilots/pilot-details", {pilot});
     })
     .catch((err) => next(err));
 });
