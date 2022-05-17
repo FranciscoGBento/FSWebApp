@@ -70,7 +70,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/profile");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
@@ -96,7 +96,7 @@ router.get("/login", isLoggedOut, (req, res) => {
 });
 
 router.post("/login", isLoggedOut, (req, res, next) => {
-  const { username, passwordHash } = req.body;
+  const { username, password } = req.body;
 
   if (!username) {
     return res.status(400).render("auth/login", {
@@ -106,11 +106,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
   // Here we use the same logic as above
   // - either length based parameters or we check the strength of a password
-  if (passwordHash.length < 8) {
-    return res.status(400).render("auth/login", {
-      errorMessage: "Your password needs to be at least 8 characters long.",
-    });
-  }
 
   // Search the database for a user with the username submitted in the form
   User.findOne({ username })

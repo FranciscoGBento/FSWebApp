@@ -20,6 +20,10 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Please input a password"],
     },
+    favouriteTeam: {
+      type: Schema.Types.ObjectId,
+      ref: 'Team'
+    }
   },
   {
     timestamps: true,
