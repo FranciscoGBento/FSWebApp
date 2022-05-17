@@ -1,29 +1,49 @@
+<div class="row">
 
-<h1>Driver standings</h1>
-{{#each driverStandings}}
-  <div>
-    <p>Driver:
-      {{Driver.driverId}}
-      Position:
-      {{position}}
-      Wins:
-      {{wins}}
-      Points:
-      {{points}}
-    </p>
+  <div class="standing">
+
+    <h1>Driver standings</h1>
+
+    <table>
+      <tr>
+        <th>Driver</th>
+        <th>Position</th>
+        <th>Wins</th>
+        <th>Points</th>
+      </tr>
+      {{#each driverStandings}}
+        <tr>
+          <td>{{Driver.driverId}}</td>
+          <td>{{position}}</td>
+          <td>{{wins}}</td>
+          <td> {{points}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
   </div>
-{{/each}}
-<h1>Constructor standings</h1>
-{{#each constructorStandings}}
-  <div>
-    <p>Driver:
-      {{Constructor.constructorId}}
-      Position:
-      {{position}}
-      Wins:
-      {{wins}}
-      Points:
-      {{points}}
-    </p>
+
+  <div class="standing">
+
+    <h1>Constructor standings</h1>
+
+    <table>
+      <tr>
+        <th>Team</th>
+        <th>Position</th>
+        <th>Wins</th>
+        <th>Points</th>
+      </tr>
+      {{#each constructorStandings}}
+        <tr>
+          <td>{{Constructor.constructorId}}</td>
+          <td>{{position}}</td>
+          <td>{{wins}}</td>
+          <td> {{points}}</td>
+        </tr>
+      {{/each}}
+    </table>
+
   </div>
-{{/each}}
+
+</div>

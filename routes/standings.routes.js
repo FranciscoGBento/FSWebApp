@@ -9,21 +9,29 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 //Driver standings
 router.get("/standings", isLoggedIn, (req, res, next) => {
-  api.getDriverStandings().then((dStandings) => {
-    const driverStandings =
-      dStandings.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
-
-    res.render("standings/standings-list", { driverStandings });
-  });
-});
-//Constructor standings
-router.get("/standings", isLoggedIn, (req, res, next) => {
-  api.getConstructorStandings().then((cStandings) => {
-    const constructorStandings =
-      cStandings.data.MRData.StandingsTable.StandingsLists[0]
-        .ConstructorStandings;
-    res.render("standings/standings-list", { constructorStandings });
-  });
+  let driverStandings;
+  let constructorStandings;
+  api
+    .getDriverStandings()
+    .then((dStandings) => {
+      driverStandings =
+        dStandings.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+    })
+    .then(() => {
+      return api.getConstructorStandings();
+    })
+    .then((cStandings) => {
+      constructorStandings =
+        cStandings.data.MRData.StandingsTable.StandingsLists[0]
+          .ConstructorStandings;
+    })
+    .then(() => {
+      res.render("standings/standings-list", {
+        driverStandings,
+        constructorStandings,
+      });
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;
