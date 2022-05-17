@@ -12,6 +12,10 @@ class ApiService {
   getDriverStandings() {
     return this.api.get("/current/driverStandings.json");
   }
+
+  getConstructorStandings() {
+    return this.api.get("/current/constructorStandings.json");
+  }
 }
 
 

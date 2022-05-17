@@ -1,6 +1,6 @@
 
 <h1>Driver standings</h1>
-{{#each response}}
+{{#each driverStandings}}
   <div>
     <p>Driver:
       {{Driver.driverId}}
@@ -14,10 +14,10 @@
   </div>
 {{/each}}
 <h1>Constructor standings</h1>
-{{#each response}}
+{{#each constructorStandings}}
   <div>
     <p>Driver:
-      {{Driver.driverId}}
+      {{Constructor.constructorId}}
       Position:
       {{position}}
       Wins:
