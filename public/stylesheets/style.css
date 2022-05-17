@@ -26,7 +26,7 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-   justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 .standing {
@@ -35,13 +35,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
- 
 }
 
-.standing td{
-padding:5px 25px;
+.standing td {
+  padding: 5px 25px;
 }
-
-
-
-
