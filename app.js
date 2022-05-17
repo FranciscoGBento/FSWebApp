@@ -40,6 +40,9 @@ app.use("/", pilotsRoutes);
 const calendarRoutes = require("./routes/calendar.routes");
 app.use("/", calendarRoutes);
 
+const standingsRoutes = require("./routes/standings.routes");
+app.use("/", standingsRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
