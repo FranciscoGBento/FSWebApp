@@ -43,6 +43,9 @@ app.use("/", calendarRoutes);
 const standingsRoutes = require("./routes/standings.routes");
 app.use("/", standingsRoutes);
 
+const legendsRoutes = require("./routes/legends.routes");
+app.use("/", legendsRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
