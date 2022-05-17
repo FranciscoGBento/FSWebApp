@@ -4,7 +4,10 @@ const ApiService = require("../services/api.services");
 
 const api = new ApiService();
 
-router.get("/calendar", (req, res, next) => {
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
+
+router.get("/calendar", isLoggedIn, (req, res, next) => {
   api.getCalendar().then((schedule) => {
     const calendar = schedule.data.MRData.RaceTable.Races;
     res.render("calendar/display-calendar", {
@@ -13,7 +16,7 @@ router.get("/calendar", (req, res, next) => {
   });
 });
 
-router.get("/grandprix-details/:id", (req, res, next) => {
+router.get("/grandprix-details/:id", isLoggedIn, (req, res, next) => {
   const { id } = req.params;
   api.getCalendar().then((circuits) => {
     const races = circuits.data.MRData.RaceTable.Races;
