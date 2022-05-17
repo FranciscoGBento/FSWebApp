@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const Circuit = require("../models/Circuit.model");
 
 const ApiService = require("../services/api.services");
 
@@ -18,19 +19,17 @@ router.get("/calendar", isLoggedIn, (req, res, next) => {
 
 router.get("/grandprix-details/:id", isLoggedIn, (req, res, next) => {
   const { id } = req.params;
-  //let circuit;
+  let circuit;
   api.getCalendar().then((circuits) => {
-   const races = circuits.data.MRData.RaceTable.Races;
-   let circuit = races.filter((race) => race.Circuit.circuitId === id)[0];
-    //return Circuit.find({name: circuit.Circuit.circuitName})
-   // .then((circuitFromDb) => {
-      //circuit.imageUrl = circuitFromDb.imageUrl
-      res.render("calendar/grandprix-details", circuit);
-    })
-
+    const races = circuits.data.MRData.RaceTable.Races;
+    circuit = races.filter((race) => race.Circuit.circuitId === id)[0];
+    return Circuit.find({ name: circuit.Circuit.circuitName }).then(
+      (circuitFromDb) => {
+        circuit.imageUrl = circuitFromDb.imageUrl;
+        res.render("calendar/grandprix-details", circuit);
+      }
+    );
   });
-//});
-
-
+});
 
 module.exports = router;
