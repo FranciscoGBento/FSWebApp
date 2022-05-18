@@ -82,7 +82,7 @@ body {
 
 .rowStandings {
   background-size: cover;
-  background-image: url("https://pbs.twimg.com/media/FEd6QeHWUAABnNY?format=jpg&name=4096x4096");
+  background-image: url("https://www.formula1.com/content/dam/fom-website/manual/Misc/2020delay/ZandvoortPics/Zandvoort2.jpg.transform/9col/image.jpg");
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -103,12 +103,17 @@ body {
   border-color: rgb(222, 20, 20)
 }
 
+.standing table{
+  margin: 8%;
+  
+}
 .standing th {
   text-align: center;
-  padding: 1vh 1vh;
+  padding: 1vh 1vw;
 }
 
 .standing td {
+  font-weight: bold;
   text-align: left;
-  padding: 1vh 1vh;
+  padding: 1vh 1vw;
 }
