@@ -1,13 +1,15 @@
-<h1>{{this.raceName}}</h1>
+<h1>{{circuit.raceName}}</h1>
 
-<p>Circuit Name:{{Circuit.circuitName}}</p>
+<p>Circuit Name:{{circuit.Circuit.circuitName}}</p>
 
-<p>Location: {{Circuit.Location.locality}}, {{Circuit.Location.country}}</p>
+<p>Location:
+  {{circuit.Circuit.Location.locality}},
+  {{circuit.Circuit.Location.country}}</p>
 
-<p>P1: {{FirstPractice.date}}</p>
-<p>P2: {{SecondPractice.date}}</p>
-<p>P3: {{ThirdPractice.date}}</p>
-<p>Qualifying: {{this.Qualifying.date}}</p>
-<p>2022 Race Date: {{this.date}}</p>
+<p>P1: {{circuit.FirstPractice.date}}</p>
+<p>P2: {{circuit.SecondPractice.date}}</p>
+<p>P3: {{circuit.ThirdPractice.date}}</p>
+<p>Qualifying: {{circuit.Qualifying.date}}</p>
+<p>2022 Race Date: {{circuit.date}}</p>
 
-<img src="{{circuit.imageUrl}}" alt="circuit" />
+<img src="{{response.imageUrl}}" alt="circuit" />

@@ -20,16 +20,18 @@ router.get("/calendar", isLoggedIn, (req, res, next) => {
 router.get("/grandprix-details/:id", isLoggedIn, (req, res, next) => {
   const { id } = req.params;
   let circuit;
-  api.getCalendar().then((circuits) => {
+  api.getCalendar()
+  .then((circuits) => {
+    
     const races = circuits.data.MRData.RaceTable.Races;
-
     circuit = races.filter((race) => race.Circuit.circuitId === id)[0];
-    return Circuit.find({ name: circuit.Circuit.circuitName }).then(
-      (circuitFromDb) => {
-        circuit.imageUrl = circuitFromDb.imageUrl;
-        res.render("calendar/grandprix-details", circuit);
-      }
-    );
+
+    return Circuit.find({ name: circuit.Circuit.circuitName })
+    .then((circuitFromDb) => {
+        const response = circuitFromDb[0];
+        res.render("calendar/grandprix-details", { response, circuit });
+      })
+      .catch((err) => next(err));
   });
 });
 

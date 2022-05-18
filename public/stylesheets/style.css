@@ -1,15 +1,36 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 75vh;
+  height: 130vh;
+  
+  font: 4vh "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+.navbar{
+  width: fit-content ;
+  background-color: red !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  margin-bottom: 1vh;
+
+  
+}
+.loginLogout{
+  margin-left: 40vh;
+}
+ 
+.navbar-nav{
+  margin-left: 50vh !important;
 }
 
-h1 {
-  color: 15px;
+.navbar div{
+  display: flex !important;
+  justify-content: space-evenly !important;
 }
+.navbar a{
+  color: white !important;
+  font-size: 20px !important;
+}
+
 
 .teamlogos {
   width: 350px;
@@ -21,22 +42,31 @@ h1 {
   height: 350px;
 }
 
-.row {
+.rowStandings {
+  width:100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('https://images6.alphacoders.com/112/1120089.jpg');
   text-align: center;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  padding: 2vh;
+  
 }
 
 .standing {
-  background-color: rgba(220, 220, 220, 0.2);
-  width: 400px;
+  margin-top: 15%;
+  background-color: rgba(220, 220, 220, 0.4);
+  width: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .standing td {
-  padding: 5px 25px;
+  padding: 1vh 1vh;
 }
+
