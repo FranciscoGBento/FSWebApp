@@ -1,16 +1,25 @@
+<div class="calendarMain">
 
-<div class="">
-<h1>Calendar</h1>
+  <h3>Calendar</h3>
 
+  <div>
 
-
-{{#each calendar}}
-<div>
-    {{this.raceName}}
-    {{this.date}}
-    {{this.round}}
-    <a href="/grandprix-details/{{Circuit.circuitId}}">Check GrandPrix</a>
-</div>
-{{/each}}
+    <table>
+      <tr>
+        <th>Grand Prix</th>
+        <th>Date</th>
+        <th>Round</th>
+      </tr>
+      {{#each calendar}}
+        <tr>
+          <td><a
+              href="/grandprix-details/{{Circuit.circuitId}}"
+            >{{this.raceName}}</a></td>
+          <td> {{this.date}}</td>
+          <td> {{this.round}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
 
 </div>
