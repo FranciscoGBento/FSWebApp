@@ -2,7 +2,7 @@
 
 <form action="/profile/create" method="post">
 
-  <label for="favouriteTeam">favouriteTeam: </label>
+  <label for="favouriteTeam">Favourite Team: </label>
   <select name="favouriteTeam" id="">
     {{#each teamList}}
       <option value={{_id}}>{{name}}</option>
@@ -14,11 +14,11 @@
       <option value={{_id}}>{{name}}</option>
     {{/each}}
   </select>
- <label for="favouritePilot">favouritePilot: </label>
+ <label for="favouritePilot">Favourite Pilot: </label>
   <select name="favouritePilot" id="">
     {{#each listPilots}}
       <option value={{_id}}>{{name}}</option>
     {{/each}}
   </select>
-  <button type="submit">Add Your Favourite Team</button>
+  <button type="submit">Create Your Favourites</button>
 
