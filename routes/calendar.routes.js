@@ -22,6 +22,7 @@ router.get("/grandprix-details/:id", isLoggedIn, (req, res, next) => {
   let circuit;
   api.getCalendar().then((circuits) => {
     const races = circuits.data.MRData.RaceTable.Races;
+
     circuit = races.filter((race) => race.Circuit.circuitId === id)[0];
     return Circuit.find({ name: circuit.Circuit.circuitName }).then(
       (circuitFromDb) => {
