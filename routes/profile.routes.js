@@ -34,7 +34,7 @@ router.post("/profile/create", isLoggedIn, (req, res, next) => {
 
 //TODAYYY!!! ------------------------------------------------------------------------
 
-router.get("/profile/create", isLoggedIn,(req, res, next) => {
+router.get("/profile/create", isLoggedIn, (req, res, next) => {
   let legendList;
   let teamList;
   Pilot.find().then((listPilots) => {
@@ -53,20 +53,34 @@ router.get("/profile/create", isLoggedIn,(req, res, next) => {
 });
 
 router.post("/profile/deleteTeam/:teamId", isLoggedIn, (req, res, next) => {
-  const {teamId} = req.params;
+  const { teamId } = req.params;
   const user = req.session.user;
-  User.findByIdAndUpdate(user._id, {$pull: {favouriteTeam: teamId}})
+  User.findByIdAndUpdate(user._id, { $pull: { favouriteTeam: teamId } })
     .then(() => res.redirect("/profile"))
     .catch((err) => next(err));
 });
 
+router.post("/profile/deletePilot/:pilotId", isLoggedIn, (req, res, next) => {
+  const { pilotId } = req.params;
+  const user = req.session.user;
+  User.findByIdAndUpdate(user._id, { $pull: { favouritePilot: pilotId } })
+    .then(() => res.redirect("/profile"))
+    .catch((err) => next(err));
+});
 
-router.post("/profile/delete-user", (req, res, next) => {
-    const user = req.session.user;
-    User.findByIdAndRemove(user._id)
-    .then(() => {
-        req.session.destroy((err) => res.redirect("/"))
-    })
-})
+router.post("/profile/deleteLegend/:legendId", isLoggedIn, (req, res, next) => {
+  const { legendId } = req.params;
+  const user = req.session.user;
+  User.findByIdAndUpdate(user._id, { $pull: { favouriteLegend: legendId } })
+    .then(() => res.redirect("/profile"))
+    .catch((err) => next(err));
+});
+
+router.post("/profile/delete-user", isLoggedIn, (req, res, next) => {
+  const user = req.session.user;
+  User.findByIdAndRemove(user._id).then(() => {
+    req.session.destroy((err) => res.redirect("/"));
+  });
+});
 
 module.exports = router;

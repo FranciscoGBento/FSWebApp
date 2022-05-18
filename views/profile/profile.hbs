@@ -6,14 +6,20 @@
   {{#each foundUser.favouriteTeam}}
     <p>Favourite Team: {{this.name}}</p>
     <form action="/profile/deleteTeam/{{_id}}" method="post">
-      <button type="submit">Delete</button>
+      <button type="submit">Delete Team</button>
     </form>
   {{/each}}
   {{#each foundUser.favouritePilot}}
     <p>Favourite Pilot: {{this.name}}</p>
+    <form action="/profile/deletePilot/{{_id}}" method="post">
+      <button type="submit">Delete Pilot</button>
+    </form>
   {{/each}}
   {{#each foundUser.favouriteLegend}}
     <p>Favourite Legend: {{this.name}}</p>
+    <form action="/profile/deleteLegend/{{_id}}" method="post">
+      <button type="submit">Delete Legend</button>
+    </form>
   {{/each}}
 
   <form action="/profile/delete-user" method="post">
