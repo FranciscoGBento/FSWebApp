@@ -4,8 +4,16 @@
 
   <h2>Welcome {{foundUser.username}}</h2>
   {{#each foundUser.favouriteTeam}}
-    <p>{{this.name}}</p>
+    <p>Favourite Team: {{this.name}}</p>
+    <form action="/profile" method="post">
+      <button type="submit">Delete</button>
+    </form>
   {{/each}}
-  {{! <p>Pilot:</p> }}
+  {{#each foundUser.favouritePilot}}
+    <p>Favourite Pilot: {{this.name}}</p>
+  {{/each}}
+  {{#each foundUser.favouriteLegend}}
+    <p>Favourite Legend: {{this.name}}</p>
+  {{/each}}
 
 {{/if}}

@@ -23,6 +23,14 @@ const userSchema = new Schema(
     favouriteTeam: [{
       type: Schema.Types.ObjectId,
       ref: 'Team'
+    }],
+    favouritePilot: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Pilot'
+    }],
+    favouriteLegend: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Legend'
     }]
   },
   {

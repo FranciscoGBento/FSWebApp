@@ -4,11 +4,21 @@
 
   <label for="favouriteTeam">favouriteTeam: </label>
   <select name="favouriteTeam" id="">
-    {{#each listTeams}}
+    {{#each teamList}}
       <option value={{_id}}>{{name}}</option>
     {{/each}}
   </select>
-
+  <label for="favouriteLegend">Favourite Legend: </label>
+  <select name="favouriteLegend" id="">
+    {{#each legendList}}
+      <option value={{_id}}>{{name}}</option>
+    {{/each}}
+  </select>
+ <label for="favouritePilot">favouritePilot: </label>
+  <select name="favouritePilot" id="">
+    {{#each listPilots}}
+      <option value={{_id}}>{{name}}</option>
+    {{/each}}
+  </select>
   <button type="submit">Add Your Favourite Team</button>
 
-</form>
