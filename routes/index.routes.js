@@ -1,14 +1,20 @@
 const router = require("express").Router();
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
+const User = require("../models/User.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-router.get('/profile', isLoggedIn, (req, res, next) => {
-  res.render('profile/profile', { user: req.session.user });
+router.get("/profile", isLoggedIn, (req, res, next) => {
+  const user = req.session.user;
+  User.findById(user._id)
+    .populate("favouriteTeam")
+    .then((foundUser) => {
+      res.render("profile/profile", { foundUser });
+    });
 });
 
 module.exports = router;

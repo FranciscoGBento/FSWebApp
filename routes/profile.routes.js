@@ -8,18 +8,22 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const { create } = require("connect-mongo");
 
 router.get("/profile/create", (req, res, next) => {
-  res.render("profile/profile-create");
+  Team.find().then((listTeams) => {
+    res.render("profile/profile-create", { listTeams });
+  });
 });
 
 router.post("/profile/create", (req, res, next) => {
-  const { favouriteTeam } = req.body;
-  const user = req.session.user
-  Team.create({ favouriteTeam })
-    .then((createdTeam) => {
-        User.findByIdAndUpdate(user._id, {$push: {favouriteTeam: createdTeam._id}})
+  const myteam = req.body;
+  const user = req.session.user;
+
+  User.findByIdAndUpdate(user._id, {
+    $push: { favouriteTeam: myteam.favouriteTeam },
+  })
+    .then((user) => {
       res.redirect("/profile");
     })
-    .catch((err) => next(err));
+    .catch((err) => err);
 });
 
 module.exports = router;

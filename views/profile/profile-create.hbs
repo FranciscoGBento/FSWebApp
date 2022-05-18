@@ -1,14 +1,14 @@
 <h2>Favourite Team</h2>
 
-<form action='/profile/create' method='post'>
+<form action="/profile/create" method="post">
 
-  <label for='username'>Username</label>
-  <input type='text' name='username' id='username' />
+  <label for="favouriteTeam">favouriteTeam: </label>
+  <select name="favouriteTeam" id="">
+    {{#each listTeams}}
+      <option value={{_id}}>{{name}}</option>
+    {{/each}}
+  </select>
 
-  <label for='favouriteTeam'>favouriteTeam</label>
-  <input type='text' name='favouriteTeam' id='favouriteTeam' />
-
-
-  <button type='submit'>Create</button>
+  <button type="submit">Add Your Favourite Team</button>
 
 </form>
