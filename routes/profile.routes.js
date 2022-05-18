@@ -15,7 +15,7 @@ const { create } = require("connect-mongo");
   });
 }); */
 
-router.post("/profile/create", (req, res, next) => {
+router.post("/profile/create", isLoggedIn, (req, res, next) => {
   const { favouriteTeam, favouriteLegend, favouritePilot } = req.body;
   console.log("here______________________________________", req.body);
   const user = req.session.user;
@@ -34,7 +34,7 @@ router.post("/profile/create", (req, res, next) => {
 
 //TODAYYY!!! ------------------------------------------------------------------------
 
-router.get("/profile/create", (req, res, next) => {
+router.get("/profile/create", isLoggedIn,(req, res, next) => {
   let legendList;
   let teamList;
   Pilot.find().then((listPilots) => {
@@ -52,12 +52,21 @@ router.get("/profile/create", (req, res, next) => {
   });
 });
 
-router.get("/profile/delete", (req, res, next) => {
-  const { id } = req.params;
+router.post("/profile/deleteTeam/:teamId", isLoggedIn, (req, res, next) => {
+  const {teamId} = req.params;
   const user = req.session.user;
-  Team.findByIdAndRemove(id)
+  User.findByIdAndUpdate(user._id, {$pull: {favouriteTeam: teamId}})
     .then(() => res.redirect("/profile"))
     .catch((err) => next(err));
 });
+
+
+router.post("/profile/delete-user", (req, res, next) => {
+    const user = req.session.user;
+    User.findByIdAndRemove(user._id)
+    .then(() => {
+        req.session.destroy((err) => res.redirect("/"))
+    })
+})
 
 module.exports = router;

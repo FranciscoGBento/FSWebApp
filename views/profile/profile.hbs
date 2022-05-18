@@ -5,7 +5,7 @@
   <h2>Welcome {{foundUser.username}}</h2>
   {{#each foundUser.favouriteTeam}}
     <p>Favourite Team: {{this.name}}</p>
-    <form action="/profile" method="post">
+    <form action="/profile/deleteTeam/{{_id}}" method="post">
       <button type="submit">Delete</button>
     </form>
   {{/each}}
@@ -15,5 +15,9 @@
   {{#each foundUser.favouriteLegend}}
     <p>Favourite Legend: {{this.name}}</p>
   {{/each}}
+
+  <form action="/profile/delete-user" method="post">
+  <button type="submit">Delete User</button>
+  </form>
 
 {{/if}}
