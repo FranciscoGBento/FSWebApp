@@ -1,15 +1,21 @@
 /* profile */
+.maindiv {
+
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("https://p4.wallpaperbetter.com/wallpaper/25/81/104/digital-art-abstract-minimalism-black-wallpaper-preview.jpg");
+}
+
+
 .profilediv {
-    padding-left: 5%;
+  padding-left: 5%;
   color: silver;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-image: url("https://p4.wallpaperbetter.com/wallpaper/25/81/104/digital-art-abstract-minimalism-black-wallpaper-preview.jpg");
   display: flex;
   text-align: left;
   align-items: left;
   flex-direction: column;
+  font-size: 16px;
 }
 
 .deletebtn {
@@ -27,8 +33,7 @@
 }
 
 .profilediv h1 {
-    padding-top: 7%;
-    padding-bottom: 7%;
-    font-size: 48px;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  font-size: 32px;
 }
-

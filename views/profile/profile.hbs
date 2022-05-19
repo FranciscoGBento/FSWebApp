@@ -1,34 +1,35 @@
-<div class="profilediv">
-  {{#if foundUser}}
-    <div>
-      <h1 class="profileh1"> Welcome <i>{{foundUser.username}}</i></h1>
-    </div>
-    {{#each foundUser.favouriteTeam}}
-      <p><b>Favourite Team: </b>{{this.name}}</p>
-      <form action="/profile/deleteTeam/{{_id}}" method="post">
-        <button class="deletebtn" type="submit"><b>Delete Team</b></button>
+<div class="maindiv" >
+  <div class="profilediv">
+    {{#if foundUser}}
+
+      <div>
+        <h1 class="profileh1"> Welcome <i>{{foundUser.username}}</i></h1>
+      </div>
+      {{#each foundUser.favouriteTeam}}
+        <p><b>Favourite Team: </b>{{this.name}}</p>
+        <form action="/profile/deleteTeam/{{_id}}" method="post">
+          <button class="deletebtn" type="submit"><b>Delete Team</b></button>
+        </form>
+      {{/each}}
+      {{#each foundUser.favouritePilot}}
+        <p><b>Favourite Pilot: </b>{{this.name}}</p>
+        <form action="/profile/deletePilot/{{_id}}" method="post">
+          <button class="deletebtn" type="submit"><b>Delete Pilot</b></button>
+        </form>
+      {{/each}}
+      {{#each foundUser.favouriteLegend}}
+        <p><b>Favourite Legend: </b>{{this.name}}</p>
+        <form action="/profile/deleteLegend/{{_id}}" method="post">
+          <button class="deletebtn" type="submit"><b>Delete Legend</b></button>
+        </form>
+      {{/each}}
+
+      <a href="/profile/create"><b>CHOOSE YOUR FAVOURITES</b></a>
+
+      <form action="/profile/delete-user" method="post">
+        <button class="deleteuserbtn" type="submit">Delete Account</button>
       </form>
-    {{/each}}
-    {{#each foundUser.favouritePilot}}
-      <p><b>Favourite Pilot: </b>{{this.name}}</p>
-      <form action="/profile/deletePilot/{{_id}}" method="post">
-        <button class="deletebtn" type="submit"><b>Delete Pilot</b></button>
-      </form>
-    {{/each}}
-    {{#each foundUser.favouriteLegend}}
-      <p><b>Favourite Legend: </b>{{this.name}}</p>
-      <form action="/profile/deleteLegend/{{_id}}" method="post">
-        <button class="deletebtn" type="submit"><b>Delete Legend</b></button>
-      </form>
-    {{/each}}
 
-    <a href="/profile/create">Add your favourites!!!</a>
-
-    <form action="/profile/delete-user" method="post">
-      <button class="deleteuserbtn" type="submit">Delete Account</button>
-    </form>
-
-    
-
-  {{/if}}
+    {{/if}}
+  </div>
 </div>
