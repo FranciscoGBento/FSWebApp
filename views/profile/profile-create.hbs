@@ -1,8 +1,13 @@
-<h2>Favourite Team</h2>
+<div class="pCreateMain">
+  <div class="createProfDiv">
+  <h1>Favourites</h2>
+  <p>Choose your team, pilot and legend so we can know who you support!</p>
 
-<form action="/profile/create" method="post">
 
-  <label for="favouriteTeam">Favourite Team: </label>
+<div class="formdiv">
+  <form action="/profile/create" method="post">
+
+    <label for="favouriteTeam">Favourite Team: </label>
   <select name="favouriteTeam" id="">
     {{#each teamList}}
       <option value={{_id}}>{{name}}</option>
@@ -20,5 +25,9 @@
       <option value={{_id}}>{{name}}</option>
     {{/each}}
   </select>
-  <button type="submit">Create Your Favourites</button>
+  <button type="submit"><b>Create Your Favourites</b></button>
+  </form>
+  </div>
+  </div>
+  </div>
 

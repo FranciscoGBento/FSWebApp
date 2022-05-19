@@ -1,12 +1,10 @@
 /* profile */
 .maindiv {
-
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-image: url("https://p4.wallpaperbetter.com/wallpaper/25/81/104/digital-art-abstract-minimalism-black-wallpaper-preview.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/25/81/104/digital-art-abstract-minimalism-black-wallpaper-preview.jpg");
 }
-
 
 .profilediv {
   padding-left: 5%;
@@ -36,4 +34,130 @@
   padding-top: 7%;
   padding-bottom: 7%;
   font-size: 32px;
+}
+
+/* Route Creating favourites from profile */
+.pCreateMain {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/25/81/104/digital-art-abstract-minimalism-black-wallpaper-preview.jpg");
+  display: flex;
+  flex-direction: column;
+}
+
+.createProfDiv {
+  padding-top: 10%;
+
+  padding-left: 5%;
+  color: silver;
+  display: flex;
+  text-align: left;
+  align-items: left;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.createProfDiv h1 {
+  font-size: 48px;
+  padding-bottom: 5%;
+}
+
+.createProfDiv p {
+  font-size: 24px;
+  padding-bottom: 5%;
+}
+
+.createProfDiv select {
+  color: black;
+}
+
+.createProfDiv form {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.createProfDiv label {
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.createProfDiv button {
+  margin-top: 10%;
+  padding: 2%;
+  background-color: rgb(222, 20, 20);
+}
+
+/* Login */
+.loginMain {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-size: cover;
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/25/81/104/digital-art-abstract-minimalism-black-wallpaper-preview.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loginMain label {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+}
+
+.loginMain a {
+  margin-top: 10%;
+  padding: 1%;
+
+  color: black;
+}
+
+.newacc {
+  font-size: 12px;
+}
+
+.loginArea {
+  background-color: rgb(222, 20, 20);
+  padding: 7%;
+  border-radius: 10%;
+}
+
+/* Signup */
+.signupMain {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-size: cover;
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/25/81/104/digital-art-abstract-minimalism-black-wallpaper-preview.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.signupMain label {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+}
+
+.signupArea {
+  background-color: rgb(222, 20, 20);
+  padding: 7%;
+  border-radius: 10%;
+}
+
+.signupArea button {
+    
+    padding: 5%;
+    margin-top: 10%;
+    margin-left: 35%;
+    font-size: 16px;
+    border-radius: 2%;
+    text-align: center;
+    background-color: white;
+    color: rgb(222, 20, 20);
 }
