@@ -56,7 +56,7 @@ const legends = [
     dateOfBirth: "11/06/1939",
     nationality: "Scotland",
     championships: "1969, 1971, 1973",
-    imageUrl: "https://static.wikia.nocookie.net/f1wikia/images/6/6f/73.jpg/revision/latest/top-crop/width/360/height/450?cb=20170617092218",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Jackie_Stewart_2011_British_Grand_Prix.jpg/1200px-Jackie_Stewart_2011_British_Grand_Prix.jpg",
   },
   {
     name: "Emerson Fittipaldi",
