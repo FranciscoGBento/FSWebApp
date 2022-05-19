@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 const Team = require("../models/Team.model");
 require("dotenv/config");
 
-
 const MONGODB_URI = process.env.MONGODB_URI;
-console.log(process.env.MONGODB_URI)
+console.log(process.env.MONGODB_URI);
 
 mongoose
   .connect(MONGODB_URI)
@@ -35,6 +34,8 @@ const teams = [
     championships: 0,
     country: "United States",
     firstEntry: "2016",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/haas-f1-team.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/Haas-F1-Team/_jcr_content/logo.img.jpg/1646210673011.jpg",
   },
@@ -44,6 +45,8 @@ const teams = [
     championships: 2,
     country: "United Kingdom",
     firstEntry: "1986",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/alpine.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/Alpine/_jcr_content/logo.img.jpg/1645620884650.jpg",
   },
@@ -53,6 +56,8 @@ const teams = [
     championships: 8,
     country: "United Kingdom",
     firstEntry: "1970",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/mercedes.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/Mercedes/_jcr_content/logo.img.jpg/1582638425211.jpg",
   },
@@ -62,6 +67,8 @@ const teams = [
     championships: 16,
     country: "Italy",
     firstEntry: "1950",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/ferrari.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/Ferrari/_jcr_content/logo.img.jpg/1521797474166.jpg",
   },
@@ -71,6 +78,8 @@ const teams = [
     championships: 0,
     country: "Italy",
     firstEntry: "1985",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/alphatauri.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/AlphaTauri/_jcr_content/logo.img.jpg/1582650557134.jpg",
   },
@@ -80,6 +89,8 @@ const teams = [
     championships: 9,
     country: "United Kingdom",
     firstEntry: "1978",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/williams.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/Williams/_jcr_content/logo.img.jpg/1590743731407.jpg",
   },
@@ -89,6 +100,8 @@ const teams = [
     championships: 8,
     country: "United Kingdom",
     firstEntry: "1966",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/mclaren.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/McLaren/_jcr_content/logo.img.jpg/1644831223911.jpg",
   },
@@ -98,6 +111,8 @@ const teams = [
     championships: 0,
     country: "United Kingdom",
     firstEntry: "2018",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/aston-martin.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/Aston-Martin/_jcr_content/logo.img.jpg/1645620644658.jpg",
   },
@@ -107,15 +122,16 @@ const teams = [
     championships: 0,
     country: "Switzerland",
     firstEntry: "1993",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/alfa-romeo.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/Alfa-Romeo-Racing/_jcr_content/logo.img.png/1643019381208.png",
   },
 ];
 
-
 Team.create(teams)
   .then((createdTeams) => {
     console.log(`Created ${createdTeams.length} in the DB`);
-    mongoose.disconnect(() => console.log('Disconnected from the db'));
+    mongoose.disconnect(() => console.log("Disconnected from the db"));
   })
   .catch((err) => console.log(err));
