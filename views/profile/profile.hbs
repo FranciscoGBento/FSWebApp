@@ -1,31 +1,34 @@
-<h2>My profile</h2>
+<div class="profilediv">
+  {{#if foundUser}}
+    <div>
+      <h1 class="profileh1"> Welcome <i>{{foundUser.username}}</i></h1>
+    </div>
+    {{#each foundUser.favouriteTeam}}
+      <p><b>Favourite Team: </b>{{this.name}}</p>
+      <form action="/profile/deleteTeam/{{_id}}" method="post">
+        <button class="deletebtn" type="submit"><b>Delete Team</b></button>
+      </form>
+    {{/each}}
+    {{#each foundUser.favouritePilot}}
+      <p><b>Favourite Pilot: </b>{{this.name}}</p>
+      <form action="/profile/deletePilot/{{_id}}" method="post">
+        <button class="deletebtn" type="submit"><b>Delete Pilot</b></button>
+      </form>
+    {{/each}}
+    {{#each foundUser.favouriteLegend}}
+      <p><b>Favourite Legend: </b>{{this.name}}</p>
+      <form action="/profile/deleteLegend/{{_id}}" method="post">
+        <button class="deletebtn" type="submit"><b>Delete Legend</b></button>
+      </form>
+    {{/each}}
 
-{{#if foundUser}}
+    <a href="/profile/create">Add your favourites!!!</a>
 
-  <h2>Welcome {{foundUser.username}}</h2>
-  {{#each foundUser.favouriteTeam}}
-    <p>Favourite Team: {{this.name}}</p>
-    <form action="/profile/deleteTeam/{{_id}}" method="post">
-      <button type="submit">Delete Team</button>
+    <form action="/profile/delete-user" method="post">
+      <button class="deleteuserbtn" type="submit">Delete Account</button>
     </form>
-  {{/each}}
-  {{#each foundUser.favouritePilot}}
-    <p>Favourite Pilot: {{this.name}}</p>
-    <form action="/profile/deletePilot/{{_id}}" method="post">
-      <button type="submit">Delete Pilot</button>
-    </form>
-  {{/each}}
-  {{#each foundUser.favouriteLegend}}
-    <p>Favourite Legend: {{this.name}}</p>
-    <form action="/profile/deleteLegend/{{_id}}" method="post">
-      <button type="submit">Delete Legend</button>
-    </form>
-  {{/each}}
 
-  <form action="/profile/delete-user" method="post">
-  <button type="submit">Delete User</button>
-  </form>
+    
 
-  <a href="/profile-create">Add your favourites!!!</a>
-
-{{/if}}
+  {{/if}}
+</div>
