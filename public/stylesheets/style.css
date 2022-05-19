@@ -193,7 +193,7 @@ body {
 .cpDetailsContainer {
   background-color: rgba(220, 220, 220, 0.5);
   font-size: 20px;
-  margin: 15%;
+  margin: 10%;
   margin-bottom: 10%;
   padding: 2%;
   border-radius: 1%;
@@ -203,9 +203,13 @@ body {
 }
 
 .cpDetailsContainer img {
-width: 80%;
-display: flex;
-margin-left: 10%;
+  width: 80%;
+  display: flex;
+  margin-left: 10%;
+}
+
+.cpDetailsContainer p {
+  margin-top: 1%;
 }
 
 /*pilots list*/
@@ -258,11 +262,7 @@ margin-left: 10%;
   font-size: 90%;
 }
 
-.pDetailsTxt {
-}
-
 /*Teams list*/
-
 .teamsListMain {
   padding: 5%;
   text-align: left;
@@ -321,5 +321,3 @@ margin-left: 10%;
   width: 600px;
   max-width: 100%;
 }
-
-/*legends*/
