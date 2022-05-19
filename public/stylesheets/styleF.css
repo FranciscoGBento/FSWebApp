@@ -201,3 +201,7 @@
 .legendsListMain div {
     margin-top: 3%;
   }
+
+input {
+    color: black;
+}

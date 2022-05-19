@@ -94,6 +94,7 @@ body {
   align-items: flex-start;
   justify-content: space-evenly;
   padding: 1%;
+  color: black;
 }
 
 .standing {
@@ -112,6 +113,7 @@ body {
 .standing table {
   margin: 8%;
   padding: 8%;
+  color: black;
 }
 .standing th {
   text-align: left;
