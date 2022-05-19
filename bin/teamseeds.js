@@ -24,6 +24,8 @@ const teams = [
     championships: 4,
     country: "United Kingdom",
     firstEntry: "1997",
+    imageUrlCar:
+      "https://www.formula1.com/content/dam/fom-website/teams/2022/red-bull-racing.png.transform/6col-retina/image.png",
     imageUrl:
       "https://www.formula1.com/content/fom-website/en/teams/Red-Bull-Racing/_jcr_content/logo.img.jpg/1645620474276.jpg",
   },

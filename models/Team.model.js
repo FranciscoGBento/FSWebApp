@@ -7,6 +7,7 @@ const teamSchema = new Schema(
     championships: Number,
     country: String,
     firstEntry: Number,
+    imageUrlCar: String,
     imageUrl: String,
   },
   {

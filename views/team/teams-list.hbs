@@ -1,9 +1,12 @@
-<h1>Teams</h1>
+
+<div class="teamsListMain">
 
 {{#each teams}}
-  <div>
-    <h3>{{name}}</h3>
-    <img class="teamlogos" src="{{imageUrl}}" alt="">
-    <a href='/teams/{{_id}}'>Check Details</a>
+  <div class="teamsListContainer">
+    <h3><a href='/teams/{{_id}}'>{{name}}</a></h3>
+    <img class="teamlogos" src="{{imageUrl}}" alt="">    
   </div>
 {{/each}}
+
+</div>
+
