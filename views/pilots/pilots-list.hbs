@@ -1,9 +1,14 @@
-<h1>Pilots</h1>
+
+
+<div class="pListMain">
+
 
 {{#each pilots}}
   <div>
-    <h3>{{name}}</h3>
+    <h3><a href="/pilots/{{_id}}">{{name}}</a></h3>
     <img class="pilotslogo" src="{{imageUrl}}" alt="pilots logo">
-    <a href="/pilots/{{_id}}">Check Details</a>
+    
   </div>
 {{/each}}
+
+</div>
